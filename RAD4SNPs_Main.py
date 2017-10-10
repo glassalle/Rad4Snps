@@ -69,9 +69,9 @@ else :
     
 ##############################################################################
 if results.database:
-    db = MySQLdb.connect(host="127.0.0.1",          # your host, usually localhost
-        user="root",                                # your username
-        passwd="rif-35",                            # your password
+    db = MySQLdb.connect(host="",                   # your host, usually localhost
+        user="",                                    # your username
+        passwd="",                                  # your password
         db=results.database)                        # name of the database
     cur1= db.cursor()                               # connexion
     print "Currently working on MySQL database:      "+str(results.database)
@@ -369,3 +369,4 @@ command35="./RAD4SNPs_FinalSQLExtract.py -i"+str(WorkDir)+"/CandidatsR2NoMulti.t
 print "Complete PE-validated fasta file: "+str(command35)
 os.system(command35) 
 
+# End.
