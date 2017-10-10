@@ -36,7 +36,6 @@ parser.add_argument('-dMin', action='store', dest='depthAlleleMin', help='')
 parser.add_argument('-dMax', action='store', dest='depthAlleleMax', help='')
 parser.add_argument('-p5', action='store', dest='pos5prim', help='')
 parser.add_argument('-p3', action='store', dest='pos3prim', help='')
-parser.add_argument('-x', action='store', dest='nbMaxAlleles', help='') # en fait, pas coherent a garder si on considere que le code ne traite que des snp biallelique. le code vire les tri alleliques donc mettre cet argument a 3 ou 4 n'a pas de sens, sauf si on adapte le code pour desactiver l'elimination des tri ou quadri alleliques.
 parser.add_argument('-q', action='store', dest='numSamplesHomologous', help='')
 parser.add_argument('-p', action='store', dest='bothSamplesPolymorphic', help='Set "FALSE" to disable option')
 
@@ -136,7 +135,7 @@ print  "The species ID that will be used is: "+str(CodeEspece)
 
 print "Retrieving candidate markers from Stacks MySQL database..."
 
-Request="select distinct ma.catalog_id,col,rank_1,rank_2,seq from matches ma join catalog_snps cs on ma.catalog_id=cs.tag_id join catalog_tags ct on ma.catalog_id=ct.tag_id join catalog_index ci on cs.tag_id=ci.tag_id where ma.catalog_id not in (select catalog_id FROM matches where depth < "+str(dMin)+") and ma.catalog_id not in (select catalog_id FROM matches where depth > "+str(dMax)+") and cs.col > "+str(p5)+" and cs.col < "+str(p3)+" and ci.snps = 1 and ci.alleles = "+str(x)+" and ci.parents = "+str(q)+" and ci.ratio = "+str(p)+" order by ma.depth;"  
+Request="select distinct ma.catalog_id,col,rank_1,rank_2,seq from matches ma join catalog_snps cs on ma.catalog_id=cs.tag_id join catalog_tags ct on ma.catalog_id=ct.tag_id join catalog_index ci on cs.tag_id=ci.tag_id where ma.catalog_id not in (select catalog_id FROM matches where depth < "+str(dMin)+") and ma.catalog_id not in (select catalog_id FROM matches where depth > "+str(dMax)+") and cs.col > "+str(p5)+" and cs.col < "+str(p3)+" and ci.snps = 1 and ci.alleles = 2 and ci.parents = "+str(q)+" and ci.ratio = "+str(p)+" order by ma.depth;"  
 print Request
 
 
