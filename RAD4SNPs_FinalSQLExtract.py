@@ -60,9 +60,9 @@ else :
 ###############################################################################
 # INITIATE Mysql connect
 ###############################################################################
-db = MySQLdb.connect(host="127.0.0.1",    # your host, usually localhost
-                     user="root",         # your username
-                     passwd="rif-35",     # your password
+db = MySQLdb.connect(host="",             # your host, usually localhost
+                     user="",             # your username
+                     passwd="",           # your password
                      db=results.Database) # name of the data base
 
 # you must create a Cursor object. It will let you execute all the queries you need.
@@ -107,9 +107,9 @@ for refligne in ReadCsvFile:
         # PreSeq=Seq[0:int(row[1])]
         # PostSeq=Seq[(int(row[1])+1):]              
         
-        # Generating the list of successful candidates sequences in a shape of a sequence with the SNP indicared between brackets [].       
-        # SequenomId=str(results.CodeSp)+str(row[0])+"\t"+PreSeq+"["+str(row[2])+"/"+str(row[3])+"]"+PostSeq
-        # print SequenomId
+        # Generating the list of successful candidates sequences in a shape of a sequence with the SNP indicated between brackets [].       
+        # MassARRAYId=str(results.CodeSp)+str(row[0])+"\t"+PreSeq+"["+str(row[2])+"/"+str(row[3])+"]"+PostSeq
+        # print MassARRAYId
         
        
         
