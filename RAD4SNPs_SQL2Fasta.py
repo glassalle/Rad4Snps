@@ -37,7 +37,7 @@ parser.add_argument('-dMax', action='store', dest='depthAlleleMax', help='')
 parser.add_argument('-p5', action='store', dest='pos5prim', help='')
 parser.add_argument('-p3', action='store', dest='pos3prim', help='')
 parser.add_argument('-q', action='store', dest='numSamplesHomologous', help='')
-parser.add_argument('-p', action='store', dest='bothSamplesPolymorphic', help='Default "TRUE", Set "FALSE" to disable option')
+parser.add_argument('-p', action='store', dest='bothSamplesPolymorphic', help='Default "TRUE")
 
 parser.add_argument('--version', action='version', version='%(prog)s 0.1')
 results = parser.parse_args()
@@ -82,9 +82,6 @@ else:
 #########################################
 # Server connexion
 ########################################
-DBHost="147.99.164.40" #esebioinf
-DBHost="147.99.160.216"#esebiocalc
-DBHost="147.99.163.59"#limneae
 DBHost="127.0.0.1"# localhost 
 
 
