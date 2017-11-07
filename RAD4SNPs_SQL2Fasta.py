@@ -37,7 +37,7 @@ parser.add_argument('-dMax', action='store', dest='depthAlleleMax', help='')
 parser.add_argument('-p5', action='store', dest='pos5prim', help='')
 parser.add_argument('-p3', action='store', dest='pos3prim', help='')
 parser.add_argument('-q', action='store', dest='numSamplesHomologous', help='')
-parser.add_argument('-p', action='store', dest='bothSamplesPolymorphic', help='Set "FALSE" to disable option')
+parser.add_argument('-p', action='store', dest='bothSamplesPolymorphic', help='Default "TRUE", Set "FALSE" to disable option')
 
 parser.add_argument('--version', action='version', version='%(prog)s 0.1')
 results = parser.parse_args()
