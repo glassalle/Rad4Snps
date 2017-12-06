@@ -108,11 +108,11 @@ else :
 
 print "Initialisation of Stacks MySQL database" # normalement deja fait avec le prog principal! a valider avec Gilles.
 if results.Database:
-    db = MySQLdb.connect(host="127.0.0.1",          # your host, usually localhost
-        user="root",                                # your username
-        passwd="rif-35",                            # your password
-        db=results.Database)                        # name of the data base
-    cur1= db.cursor()                               # connexion
+    db = MySQLdb.connect(host="",          # your host, usually localhost
+        user="",                           # your username
+        passwd="",                         # your password
+        db=results.Database)               # name of the data base
+    cur1= db.cursor()                      # connexion
 else:
     print "Database not found, please check out inserted ID for the database [-d]. End of program."
     sys.exit()  
